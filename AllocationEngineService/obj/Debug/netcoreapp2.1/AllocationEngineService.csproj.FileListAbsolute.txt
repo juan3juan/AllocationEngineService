@@ -1,0 +1,13 @@
+D:\Yury\Program\BackTest\AllocationEngineService\AllocationEngineService\bin\Debug\netcoreapp2.1\AllocationEngineService.deps.json
+D:\Yury\Program\BackTest\AllocationEngineService\AllocationEngineService\bin\Debug\netcoreapp2.1\AllocationEngineService.runtimeconfig.json
+D:\Yury\Program\BackTest\AllocationEngineService\AllocationEngineService\bin\Debug\netcoreapp2.1\AllocationEngineService.runtimeconfig.dev.json
+D:\Yury\Program\BackTest\AllocationEngineService\AllocationEngineService\bin\Debug\netcoreapp2.1\AllocationEngineService.dll
+D:\Yury\Program\BackTest\AllocationEngineService\AllocationEngineService\bin\Debug\netcoreapp2.1\AllocationEngineService.pdb
+D:\Yury\Program\BackTest\AllocationEngineService\AllocationEngineService\obj\Debug\netcoreapp2.1\AllocationEngineService.csproj.CoreCompileInputs.cache
+D:\Yury\Program\BackTest\AllocationEngineService\AllocationEngineService\obj\Debug\netcoreapp2.1\AllocationEngineService.RazorAssemblyInfo.cache
+D:\Yury\Program\BackTest\AllocationEngineService\AllocationEngineService\obj\Debug\netcoreapp2.1\AllocationEngineService.RazorAssemblyInfo.cs
+D:\Yury\Program\BackTest\AllocationEngineService\AllocationEngineService\obj\Debug\netcoreapp2.1\AllocationEngineService.AssemblyInfoInputs.cache
+D:\Yury\Program\BackTest\AllocationEngineService\AllocationEngineService\obj\Debug\netcoreapp2.1\AllocationEngineService.AssemblyInfo.cs
+D:\Yury\Program\BackTest\AllocationEngineService\AllocationEngineService\obj\Debug\netcoreapp2.1\AllocationEngineService.RazorTargetAssemblyInfo.cache
+D:\Yury\Program\BackTest\AllocationEngineService\AllocationEngineService\obj\Debug\netcoreapp2.1\AllocationEngineService.dll
+D:\Yury\Program\BackTest\AllocationEngineService\AllocationEngineService\obj\Debug\netcoreapp2.1\AllocationEngineService.pdb
