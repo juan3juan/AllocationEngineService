@@ -11,3 +11,4 @@ D:\Yury\Program\BackTest\AllocationEngineService\AllocationEngineService\obj\Deb
 D:\Yury\Program\BackTest\AllocationEngineService\AllocationEngineService\obj\Debug\netcoreapp2.1\AllocationEngineService.RazorTargetAssemblyInfo.cache
 D:\Yury\Program\BackTest\AllocationEngineService\AllocationEngineService\obj\Debug\netcoreapp2.1\AllocationEngineService.dll
 D:\Yury\Program\BackTest\AllocationEngineService\AllocationEngineService\obj\Debug\netcoreapp2.1\AllocationEngineService.pdb
+D:\Yury\Program\BackTest\AllocationEngineService\AllocationEngineService\obj\Debug\netcoreapp2.1\AllocationEngineService.csprojAssemblyReference.cache
