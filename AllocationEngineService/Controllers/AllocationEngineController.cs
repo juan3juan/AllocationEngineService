@@ -1,33 +1,52 @@
 ﻿using AllocationEngineService.Model;
+using AllocationEngineService.Services;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
-using Newtonsoft.Json;
 
 namespace AllocationEngineService.Controllers
 {
     [Route("api/[Controller]")]
     public class AllocationEngineController : Controller
     {
-        //[HttpPost("[action]")]
-        //public async Task<IActionResult> Strategy([FromBody] DataContract dataContract)
-        //{
-        //    double Cash = dataContract.CurrentCash;
-        //    return Ok("Cash remail :" + Cash / 3);
-        //}
-        [HttpPost("[action]")]
-        public async Task<IActionResult> Strategy([FromBody] DataContract dataContract)
+        private static IDataAccess _dataAccess;
+
+        public AllocationEngineController(IDataAccess dataAccess)
         {
-            //DataContract dataContract = JsonConvert.DeserializeObject<DataContract>(dataContractstring);
+            _dataAccess = dataAccess;
+        }
+        private static Dictionary<string, Security> securityMaster = null;
+        public static Dictionary<string, Security> SecurityMaster
+        {
+            get
+            {
+                if (securityMaster == null)
+                {
+                    // if not new, then the method will become a dead loop with SecurityMaster add
+                    securityMaster = _dataAccess.GetData();
+                }
+                return securityMaster;
+            }
+        }
+
+        [HttpPost("[action]")]
+        public async Task<IActionResult> FlushSecurityMaster()
+        {
+            return Ok("Flushed");
+        }
+
+        [HttpPost("[action]")]
+        public async Task<IActionResult> ExecuteStrategy([FromBody] DataContract dataContract)
+        {
             Dictionary<string, int> result = new Dictionary<string, int>();
 
-            SecPosition secPosition = dataContract.SecPositions.First();
-            string SecurityID = secPosition.SecurityID;
             double cash = dataContract.CurrentCash;
-            List<double> priceHistory = secPosition.CurrentPrice;
+            SecPosition secPosition = dataContract.SecPositions.First();
+            string SecurityID = secPosition.SecurityID;  
+            DateTime currentDate = secPosition.currentDate;
+            List<double> priceHistory = GetPriceInrange(SecurityID, currentDate);   
             double currentPrice = priceHistory.Last();
             double previousPrice = priceHistory[priceHistory.Count - 2];
             bool flagBuy = secPosition.PositionQuantity > 0 ? true : false;
@@ -53,6 +72,15 @@ namespace AllocationEngineService.Controllers
             #endregion logic to buy or sell stock
             //string x = JsonConvert.SerializeObject(result);
             return Ok(result);
+        }
+
+        private List<double> GetPriceInrange(string secID, DateTime currentDate)
+        {
+            return SecurityMaster[secID]
+                    .SecurityPricingData
+                    .Where(p => DateTime.Compare(p.Date, currentDate) <= 0)
+                    .Select(p => p.ClosePrice)
+                    .ToList();
         }
     }
 }
