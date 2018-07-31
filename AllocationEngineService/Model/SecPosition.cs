@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace AllocationEngineService.Model
 {
@@ -11,6 +7,7 @@ namespace AllocationEngineService.Model
         public string SecurityID;
         public int PositionQuantity;
         public double BuyPrice;
-        public List<double> CurrentPrice;
+        public DateTime currentDate;
+        //public List<double> CurrentPrice;
     }
 }
